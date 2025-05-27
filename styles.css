@@ -1,0 +1,459 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #e67e22;
+  --text-color: #2c3e50;
+  --light-bg: #f8f9fa;
+  --white: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: "Playfair Display", "Segoe UI", serif;
+  line-height: 1.8;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px;
+  background-image: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Header styles */
+header {
+  background-color: var(--white);
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-color), #f39c12);
+}
+
+figure {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+figure img:hover {
+  transform: scale(1.02);
+}
+
+figcaption {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-top: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Navigation styles */
+section h1 {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--accent-color);
+  padding-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+li {
+  background-color: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+li:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+li:hover a {
+  color: var(--white);
+}
+
+/* Recipe content styles */
+section {
+  background-color: var(--white);
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color), transparent);
+}
+
+section h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+section ul {
+  display: block;
+  padding-left: 2rem;
+}
+
+section ul li {
+  background: none;
+  padding: 0.8rem 0;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+  border-radius: 0;
+}
+
+section ul li:hover {
+  transform: none;
+  background: none;
+  box-shadow: none;
+}
+
+section ul li:hover a {
+  color: var(--accent-color);
+}
+
+/* Directions styles */
+h4 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin: 2rem 0 1rem;
+  font-weight: 600;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+h4::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Nutrition table styles */
+footer {
+  background-color: var(--white);
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color), transparent);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+th {
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+tr:hover {
+  background-color: rgba(230, 126, 34, 0.05);
+}
+
+/* Recipe collection page specific styles */
+body > h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+body > h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--accent-color);
+}
+
+body > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0;
+}
+
+body > ul > li {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+body > ul > li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color), transparent);
+}
+
+body > ul > li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+body > ul > li > a {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+body > ul > li:hover > a {
+  color: var(--accent-color);
+}
+
+/* Main recipes page specific styles */
+.subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: -2rem;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0;
+}
+
+.recipe-grid li {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.recipe-grid li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color), transparent);
+}
+
+.recipe-grid li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-grid li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.recipe-grid li i {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.recipe-grid li span {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.recipe-grid li .recipe-description {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.recipe-grid li:hover span {
+  color: var(--accent-color);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.author {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--accent-color);
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .subtitle {
+    font-size: 1rem;
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .recipe-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recipe-grid li {
+    padding: 1.5rem;
+  }
+
+  .recipe-grid li i {
+    font-size: 2rem;
+  }
+
+  .recipe-grid li span {
+    font-size: 1.2rem;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  header,
+  section,
+  footer {
+    padding: 2rem;
+  }
+
+  figure img {
+    max-width: 100%;
+  }
+
+  ul {
+    flex-direction: column;
+  }
+
+  li {
+    width: 100%;
+  }
+
+  body > h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Add Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
